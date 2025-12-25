@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Threatfuze – FAQ & Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="faq-contact.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="faq-contact.css">
+</head>
+<body>
+  <!-- Shared header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Threatfuze</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq-contact.html" class="nav-link-active">FAQ &amp; Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero hero--faq">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Questions, answers and real support.</h1>
+          <p>
+            Find quick answers to the most common questions about Threatfuze,
+            and reach out to our team whenever you need help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ + contact layout -->
+    <section class="section-faq-contact">
+      <div class="container layout-two-columns">
+        <!-- FAQ column -->
+        <section class="faq">
+          <header class="section-heading">
+            <h2>Frequently asked questions</h2>
+            <p>
+              Everything you need to know before starting your first security plan.
+            </p>
+          </header>
+
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>What does Threatfuze actually protect?</h3>
+              <p>
+                Threatfuze focuses on your live environment: it tracks incoming
+                attacks, your current protection status and the actions your team
+                takes in response. The dashboard gives you one place to understand
+                if you are safe right now.
+              </p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Do I need security experience to use the dashboard?</h3>
+              <p>
+                No. The interface is designed for both security teams and
+                non‑experts. Color‑coded status, captured threats and smart tips
+                explain what is happening in clear language and suggest the next
+                step.
+              </p>
+            </article>
+
+            <article class="faq-item">
+              <h3>How often is the protection status updated?</h3>
+              <p>
+                The protection status updates in real time whenever new events
+                are detected. If Threatfuze notices a new risk or open exposure,
+                the status and recommended action change immediately.
+              </p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Can I review past attacks and responses?</h3>
+              <p>
+                Yes. The attack response log keeps a timeline of important
+                events, including blocked threats and manual actions your team
+                performed. This makes it easy to review incidents or prepare a
+                report.
+              </p>
+            </article>
+
+            <article class="faq-item">
+              <h3>What happens after my free trial ends?</h3>
+              <p>
+                You can choose one of the pricing plans that best fits your
+                team. Your settings and historical data stay in place, so you
+                can continue from exactly where you stopped.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Contact column -->
+        <section class="contact">
+          <header class="section-heading">
+            <h2>Contact our team</h2>
+            <p>
+              Send us a message and we will get back to you as soon as possible.
+            </p>
+          </header>
+
+          <div class="contact-card">
+            <form class="contact-form">
+              <div class="form-row">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Work email</label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required>
+              </div>
+
+              <div class="form-row">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your company name">
+              </div>
+
+              <div class="form-row">
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic">
+                  <option>General question</option>
+                  <option>Pricing &amp; plans</option>
+                  <option>Security &amp; compliance</option>
+                  <option>Technical issue</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4"
+                  placeholder="Tell us what you need help with"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Send message
+              </button>
+
+              <p class="form-hint">
+                This contact form is for demo purposes only. No real messages are sent.
+              </p>
+            </form>
+
+            <div class="contact-details">
+              <p><strong>Prefer email?</strong></p>
+              <p>Reach us at: <a href="mailto:support@threatfuze.com">support@threatfuze.com</a></p>
+              <p class="contact-note">
+                Our team usually responds within one business day.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Threatfuze. All rights reserved.</p>
+      <p class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <span>·</span>
+        <a href="terms.html">Terms</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
