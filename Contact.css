@@ -70,6 +70,15 @@ a:hover {
 
 /* ==== Header & navigation ==== */
 
+/* .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(10, 16, 43, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+} */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -79,12 +88,34 @@ a:hover {
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.header-inner {
+/* .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: 0.8rem;
+} */
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  /* שינוי: מאפשר שבירת שורות במסכים קטנים */
+  flex-wrap: wrap; 
+  justify-content: center; /* ממרכז את הלוגו והתפריט */
+  gap: 1rem; /* רווח בין הלוגו לתפריט כשהם אחד מתחת לשני */
+  padding-block: 0.8rem;
 }
+
+/* .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 1rem;
+} */
 
 .logo {
   display: flex;
@@ -96,16 +127,27 @@ a:hover {
   color: var(--text-main);
   text-decoration: none;
   font-size: 1rem;
+  /* שינוי: מוודא שהלוגו לא מתכווץ */
+  flex-shrink: 0; 
 }
 
 .logo-icon {
   font-size: 1.3rem;
 }
 
-.main-nav {
+/* .main-nav {
   display: flex;
   gap: 1.2rem;
   font-size: 0.95rem;
+} */
+
+.main-nav {
+  display: flex;
+  gap: 1rem; /* הקטנו מעט את הרווח לניידים */
+  font-size: 0.95rem;
+  /* שינוי: חשוב מאוד לניידים קטנים */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .main-nav a {
@@ -336,5 +378,16 @@ textarea {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  /* עדכון ל-Header במחשב: מחזיר לשורה אחת עם רווח ביניהם */
+  .header-inner {
+    flex-wrap: nowrap; /* מבטל את שבירת השורות */
+    justify-content: space-between; /* לוגו לימין, תפריט לשמאל */
+    gap: 0;
+  }
+
+  .main-nav {
+    gap: 1.2rem; /* מחזיר את הרווח המקורי */
+    justify-content: flex-end;
   }
 }
