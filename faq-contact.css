@@ -1,4 +1,4 @@
-/* ==== Base styles (matching the features page, slightly lighter blue) ==== */
+/* ==== Base styles matching the features page, slightly lighter blue ==== */
 
 *,
 *::before,
@@ -35,9 +35,17 @@ h1, h2, h3 {
   line-height: 1.3;
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.7rem; }
-h3 { font-size: 1.1rem; }
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
 
 p {
   margin: 0 0 0.7em;
@@ -52,6 +60,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Utility container */
 
 .container {
   width: min(1100px, 100% - 2.5rem);
@@ -77,12 +87,19 @@ a:hover {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-main);
   text-decoration: none;
   font-size: 1rem;
+}
+
+.logo-icon {
+  font-size: 1.3rem;
 }
 
 .main-nav {
@@ -279,6 +296,16 @@ textarea {
 .footer-links {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-main);
 }
 
 .footer-links span {

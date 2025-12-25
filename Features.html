@@ -1,182 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Threatfuze – Features</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="Features.css">
-
-
-  <!-- Google Font example -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threatfuze - Features</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Features.css">
 </head>
 <body>
-  <!-- Shared site header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">Threatfuze</a>
-
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="features.html" class="nav-link-active">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="faq-contact.html">FAQ &amp; Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero / intro for the features page -->
-    <section class="hero hero--features">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1>Powerful protection. Clear insights.</h1>
-          <p>
-            Threatfuze gives you a real‑time defense status, captured threats,
-            detailed attack responses and practical security tips – all in one
-            focused dashboard.
-          </p>
-          <a class="btn btn-primary" href="pricing.html">Start your plan</a>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="logo" href="home.html">
+                    <span class="logo-icon">🛡️</span>
+                    Threatfuze
+                </a>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="home.html">Home</a>
+                    <a href="features.html" class="nav-link-active">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="faq-contact.html">FAQ &amp; Contact</a>
+                </nav>
+            </div>
         </div>
+    </header>
 
-        <!-- Placeholder for a future dashboard image or illustration -->
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-dashboard-preview">
-            <span class="hero-chip hero-chip--safe">System Safe</span>
-            <span class="hero-chip hero-chip--alert">3 Active Alerts</span>
-            <span class="hero-chip hero-chip--tip">New security tip</span>
-          </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero--features">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Powerful protection. Clear insights.</h1>
+                        <p>Threatfuze gives you real-time defense status, captured threats, detailed attack responses and practical security tips - all in one focused dashboard.</p>
+                        <a class="btn btn-primary" href="pricing.html">Start your plan</a>
+                    </div>
+                    <!-- Dashboard Preview - Moved to side and enlarged -->
+                    <div class="hero-visual">
+                        <div class="hero-dashboard-preview">
+                            <span class="hero-chip hero-chip--safe">System Safe</span>
+                            <span class="hero-chip hero-chip--alert">3 Active Alerts</span>
+                            <span class="hero-chip hero-chip--tip">New security tip</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-features">
+            <div class="container">
+                <header class="section-heading">
+                    <h2>Core dashboard features</h2>
+                    <p>Every card represents a live area inside the Threatfuze dashboard that helps you understand your security posture instantly.</p>
+                </header>
+
+                <div class="feature-grid">
+                    <!-- Feature 1 -->
+                    <article class="feature-card">
+                        <div class="feature-icon feature-icon--status">●</div>
+                        <h3>Protection Status</h3>
+                        <p class="feature-tagline">Instant answer to "Am I safe right now?"</p>
+                        <p>Shows your current environment state - secure, at risk, or under threat - using clear colors and wording. Highlights the most important action to take immediately.</p>
+                        <ul class="feature-list">
+                            <li>Color-coded status levels (Safe, Warning, Critical)</li>
+                            <li>Clear explanation of status changes</li>
+                            <li>Quick action button for immediate protection</li>
+                        </ul>
+                    </article>
+
+                    <!-- Feature 2 -->
+                    <article class="feature-card">
+                        <div class="feature-icon feature-icon--threats">☠</div>
+                        <h3>Captured Threats</h3>
+                        <p class="feature-tagline">Focused summary of blocked attacks.</p>
+                        <p>Groups latest attack attempts that Threatfuze stopped before reaching your systems. Each row shows threat type, origin, and severity level.</p>
+                        <ul class="feature-list">
+                            <li>Compact list with type, origin and time</li>
+                            <li>Severity badges for quick scanning</li>
+                            <li>Links to full threat details</li>
+                        </ul>
+                    </article>
+
+                    <!-- Feature 3 -->
+                    <article class="feature-card">
+                        <div class="feature-icon feature-icon--log">▤</div>
+                        <h3>Attack Response Log</h3>
+                        <p class="feature-tagline">Clean timeline of events and reactions.</p>
+                        <p>Security journal recording every important event - detection, blocking, notifications and manual actions - in chronological order for easy incident reconstruction.</p>
+                        <ul class="feature-list">
+                            <li>Time-ordered entries with clear labels</li>
+                            <li>Filters for date, severity and type</li>
+                            <li>Readable layout for quick reviews</li>
+                        </ul>
+                    </article>
+
+                    <!-- Feature 4 -->
+                    <article class="feature-card">
+                        <div class="feature-icon feature-icon--tips">💡</div>
+                        <h3>Smart Security Tips</h3>
+                        <p class="feature-tagline">Practical guidance inside the dashboard.</p>
+                        <p>Translates complex security practices into short, actionable recommendations. Tips change based on your setup and recent activity.</p>
+                        <ul class="feature-list">
+                            <li>Short tips tailored to your context</li>
+                            <li>Clear "why this matters" explanations</li>
+                            <li>One-click links to settings</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-cta">
+            <div class="container cta-inner">
+                <div>
+                    <h2>Ready to see Threatfuze in action?</h2>
+                    <p>Explore all dashboard features with a trial plan and understand your security status in minutes.</p>
+                </div>
+                <a class="btn btn-secondary" href="pricing.html">View plans</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2025 Threatfuze. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <span>·</span>
+                <a href="terms.html">Terms</a>
+            </p>
         </div>
-      </div>
-    </section>
-
-    <!-- Feature cards section -->
-    <section class="section-features">
-      <div class="container">
-        <header class="section-heading">
-          <h2>Core dashboard features</h2>
-          <p>
-            Every card below represents a live area inside the Threatfuze
-            dashboard that helps users understand their security posture in seconds.
-          </p>
-        </header>
-
-        <div class="feature-grid">
-          <!-- 1. Protection Status -->
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--status" aria-hidden="true">●</div>
-            <h3>Protection Status</h3>
-            <p class="feature-tagline">
-              Instant answer to “Am I safe right now?”
-            </p>
-            <p>
-              The Protection Status block shows the current state of your
-              environment – secure, at risk, or under active threat – using clear
-              colors and wording. It also highlights the most important action
-              you can take right now, such as updating rules or enabling a new
-              protection mode.
-            </p>
-            <ul class="feature-list">
-              <li>Color‑coded status levels (Safe, Warning, Critical).</li>
-              <li>Short explanation of why the status changed.</li>
-              <li>Primary action button to strengthen protection immediately.</li>
-            </ul>
-          </article>
-
-          <!-- 2. Captured Threats -->
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--threats" aria-hidden="true">☠</div>
-            <h3>Captured Threats</h3>
-            <p class="feature-tagline">
-              A focused summary of blocked attacks.
-            </p>
-            <p>
-              The Captured Threats area groups together the latest attack
-              attempts that Threatfuze stopped before they reached your users or
-              systems. Each row shows the threat type, where it came from, and
-              how severe it was, so analysts can quickly decide what needs a
-              deeper investigation.
-            </p>
-            <ul class="feature-list">
-              <li>Compact list with threat type, origin and time.</li>
-              <li>Severity badges for quick visual scanning.</li>
-              <li>Links to a full “Threat details” view for each attack.</li>
-            </ul>
-          </article>
-
-          <!-- 3. Attack Response Log -->
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--log" aria-hidden="true">▤</div>
-            <h3>Attack Response Log</h3>
-            <p class="feature-tagline">
-              A clean timeline of what happened and how the system reacted.
-            </p>
-            <p>
-              The Attack Response Log behaves like a security journal. It
-              records every important security event – detection, blocking,
-              notifications and manual actions – in chronological order. This
-              makes it easy to reconstruct incidents and explain decisions to
-              your team or management.
-            </p>
-            <ul class="feature-list">
-              <li>Time‑ordered entries with clear labels and icons.</li>
-              <li>Filters for date, severity and response type.</li>
-              <li>Readable layout designed for quick incident reviews.</li>
-            </ul>
-          </article>
-
-          <!-- 4. Smart Security Tips -->
-          <article class="feature-card">
-            <div class="feature-icon feature-icon--tips" aria-hidden="true">💡</div>
-            <h3>Smart Security Tips</h3>
-            <p class="feature-tagline">
-              Practical guidance, right inside the dashboard.
-            </p>
-            <p>
-              Smart Security Tips translate complex security best practices
-              into short, actionable recommendations. The tips change based on
-              your current setup and recent activity, helping every user – even
-              non‑experts – operate the system in a safer way.
-            </p>
-            <ul class="feature-list">
-              <li>Short, easy‑to‑read tips tailored to your context.</li>
-              <li>Clear “why this matters” explanation for each tip.</li>
-              <li>One‑click links to the relevant settings or help article.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Optional CTA section at bottom -->
-    <section class="section-cta">
-      <div class="container cta-inner">
-        <div>
-          <h2>Ready to see Threatfuze in action?</h2>
-          <p>
-            Explore all dashboard features with a trial plan and understand your
-            real security status in minutes, not days.
-          </p>
-        </div>
-        <a class="btn btn-secondary" href="pricing.html">View plans</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Shared footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; 2025 Threatfuze. All rights reserved.</p>
-      <p class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <span>·</span>
-        <a href="terms.html">Terms</a>
-      </p>
-    </div>
-  </footer>
+    </footer>
 </body>
 </html>
