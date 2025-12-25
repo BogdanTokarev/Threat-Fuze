@@ -1,4 +1,4 @@
-/* ==== Base styles matching the features page, slightly lighter blue ==== */
+/* ==== Base styles matching the Features page, slightly lighter blue ==== */
 
 *,
 *::before,
@@ -170,7 +170,7 @@ a:hover {
 
 /* ==== FAQ + Contact layout ==== */
 
-.section-faq-contact {
+.section-faq-Contact {
   padding-block: 2.7rem 3.4rem;
   background: var(--bg-main);
 }
@@ -211,7 +211,7 @@ a:hover {
 
 /* Contact column */
 
-.contact-card {
+.Contact-card {
   background: radial-gradient(circle at top right, #253a8a 0, #111a3d 55%);
   border-radius: var(--radius-lg);
   padding: 1.5rem 1.4rem 1.7rem;
@@ -219,7 +219,7 @@ a:hover {
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
 }
 
-.contact-form {
+.Contact-form {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -270,11 +270,11 @@ textarea {
   color: rgba(183, 185, 230, 0.8);
 }
 
-.contact-details p {
+.Contact-details p {
   margin-bottom: 0.4rem;
 }
 
-.contact-note {
+.Contact-note {
   font-size: 0.85rem;
 }
 
@@ -328,7 +328,7 @@ textarea {
     flex: 3;
   }
 
-  .contact {
+  .Contact {
     flex: 2;
   }
 

@@ -140,7 +140,7 @@ p {
     padding-block: 3.2rem 2.8rem;
 }
 
-.hero--features {
+.hero--Features {
     background: radial-gradient(circle at top left, #202876, #050922 55%);
 }
 
@@ -216,7 +216,7 @@ p {
 }
 
 /* Features Section */
-.section-features {
+.section-Features {
     padding-block: 3rem 4rem;
     background: var(--bg-main);
 }

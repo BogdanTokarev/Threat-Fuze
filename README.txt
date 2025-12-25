@@ -11,8 +11,8 @@ Short Discription:
     The website allows you to read about our project,
     what we offer and why we are good.
 
-    The website includes a description of the features,
-    subscription types and a contact page.
+    The website includes a description of the Features,
+    subscription types and a Contact page.
 
 
 Work Division:
