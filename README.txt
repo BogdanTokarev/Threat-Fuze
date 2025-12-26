@@ -24,7 +24,5 @@ Work Division:
     Liam:
     Was responsible for the Features and Contact pages. 
     also defined the overall design.
- hello 
-
- hello2
+ 
 
