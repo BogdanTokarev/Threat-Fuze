@@ -1,68 +1,115 @@
-/* Base styles */
+/* ===========================================
+   Features.css - הסבר מלא שורה אחר שורה
+   =========================================== */
+
+/* Base styles - כל האלמנטים */
 *, *::before, *::after {
+    /* box-model כולל padding+border */
     box-sizing: border-box;
 }
 
+/* משתני CSS גלובליים */
 :root {
+    /* רקע ראשי */
     --bg-main: #050922;
+    /* רקע סקשנים */
     --bg-section: #0b1033;
+    /* רקע כרטיסים */
     --bg-card: #111643;
+    /* צבע הדגשה */
     --accent: #5c7cfa;
+    /* הדגשה שקופה */
     --accent-soft: rgba(92, 124, 250, 0.18);
+    /* גרדיאנט הדגשה */
     --accent-gradient: linear-gradient(135deg, #5c7cfa, #7f5af0);
+    /* טקסט ראשי */
     --text-main: #f4f5ff;
+    /* טקסט משני */
     --text-muted: #b7b9e6;
+    /* מסגרת */
     --border-subtle: rgba(255, 255, 255, 0.08);
+    /* פינות */
     --radius-lg: 18px;
+    /* צל */
     --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
+/* גוף הדף */
 body {
+    /* מבטל מרווחים */
     margin: 0;
+    /* גופנים */
     font-family: 'Inter', system-ui, sans-serif;
+    /* גרדיאנט רקע */
     background: radial-gradient(circle at top, #1c2470, #050922 55%);
+    /* צבע טקסט */
     color: var(--text-main);
+    /* גובה שורה */
     line-height: 1.6;
 }
 
+/* כותרות */
 h1, h2, h3 {
+    /* מרווחים */
     margin: 0 0 0.8rem;
+    /* גובה שורה */
     line-height: 1.3;
+    /* משקל */
     font-weight: 700;
 }
 
+/* גדלי כותרות */
 h1 { font-size: 2.4rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.3rem; }
 
+/* פסקאות */
 p {
+    /* מרווחים */
     margin: 0 0 0.75em;
+    /* צבע */
     color: var(--text-muted);
 }
 
+/* מיכל */
 .container {
+    /* רוחב רספונסיבי */
     width: min(1100px, 100% - 2.5rem);
+    /* ממרכז */
     margin-inline: auto;
 }
 
-/* Header */
+/* ==== Header ==== */
+
+/* כותרת דביקה */
 .site-header {
+    /* sticky */
     position: sticky;
     top: 0;
+    /* שכבה גבוהה */
     z-index: 100;
+    /* רקע שקוף */
     background: rgba(5, 9, 34, 0.96);
+    /* טשטוש */
     backdrop-filter: blur(14px);
+    /* מסגרת */
     border-bottom: 1px solid var(--border-subtle);
 }
 
+/* תא כותרת */
 .header-inner {
+    /* Flexbox */
     display: flex;
+    /* מיישר */
     align-items: center;
     justify-content: space-between;
+    /* padding */
     padding-block: 0.8rem;
 }
 
+/* לוגו */
 .logo {
+    /* Flexbox */
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -74,16 +121,19 @@ p {
     text-decoration: none;
 }
 
+/* אייקון */
 .logo-icon {
     font-size: 1.3rem;
 }
 
+/* תפריט */
 .main-nav {
     display: flex;
     gap: 1.2rem;
     font-size: 0.95rem;
 }
 
+/* קישורי תפריט */
 .main-nav a {
     color: var(--text-muted);
     text-decoration: none;
@@ -93,13 +143,15 @@ p {
     transition: all 0.18s ease;
 }
 
-.main-nav a:hover,
-.nav-link-active {
+/* hover + active */
+.main-nav a:hover, .nav-link-active {
     color: var(--text-main);
     background: var(--accent-soft);
 }
 
-/* Buttons */
+/* ==== Buttons ==== */
+
+/* כפתור בסיסי */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -114,28 +166,33 @@ p {
     transition: all 0.16s ease;
 }
 
+/* כפתור ראשי */
 .btn-primary {
     background: var(--accent-gradient);
     color: #fff;
     box-shadow: var(--shadow-soft);
 }
 
+/* hover ראשי */
 .btn-primary:hover {
     transform: translateY(-1px);
     box-shadow: 0 22px 55px rgba(0, 0, 0, 0.65);
 }
 
+/* כפתור משני */
 .btn-secondary {
     background: transparent;
     color: var(--text-main);
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+/* hover משני */
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.06);
 }
 
-/* Hero Section - Updated for side layout */
+/* ==== Hero Section ==== */
+
 .hero {
     padding-block: 3.2rem 2.8rem;
 }
@@ -144,6 +201,7 @@ p {
     background: radial-gradient(circle at top left, #202876, #050922 55%);
 }
 
+/* פריסת הירו - שתי עמודות */
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -151,6 +209,7 @@ p {
     align-items: center;
 }
 
+/* טקסט הירו */
 .hero-text {
     max-width: 36rem;
 }
@@ -163,7 +222,7 @@ p {
     font-weight: 400;
 }
 
-/* Dashboard Preview - Enlarged and moved to side */
+/* תצוגת דשבורד */
 .hero-visual {
     display: flex;
     justify-content: center;
@@ -183,6 +242,7 @@ p {
     gap: 1rem;
 }
 
+/* צ'יפים */
 .hero-chip {
     display: flex;
     align-items: center;
@@ -215,12 +275,14 @@ p {
     background: rgba(245, 166, 35, 0.15);
 }
 
-/* Features Section */
+/* ==== Features Section ==== */
+
 .section-Features {
     padding-block: 3rem 4rem;
     background: var(--bg-main);
 }
 
+/* כותרת סקשן */
 .section-heading {
     text-align: center;
     max-width: 600px;
@@ -235,12 +297,15 @@ p {
     font-weight: 400;
 }
 
+/* רשת תכונות */
 .feature-grid {
     display: grid;
+    /* רספונסיבי אוטומטי */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.6rem;
 }
 
+/* כרטיס תכונה */
 .feature-card {
     background: radial-gradient(circle at top left, #1a214f, #111643 55%);
     border-radius: var(--radius-lg);
@@ -254,6 +319,7 @@ p {
     overflow: hidden;
 }
 
+/* אפקט hover */
 .feature-card::before {
     content: '';
     position: absolute;
@@ -267,6 +333,7 @@ p {
     opacity: 1;
 }
 
+/* אייקון תכונה */
 .feature-icon {
     width: 36px;
     height: 36px;
@@ -280,6 +347,7 @@ p {
     color: #fff;
 }
 
+/* אייקונים ספציפיים */
 .feature-icon--status {
     background: linear-gradient(135deg, #4ad66d, #34c759);
 }
@@ -310,6 +378,7 @@ p {
     font-weight: 400;
 }
 
+/* רשימת תכונות */
 .feature-list {
     margin: 0.5rem 0 0;
     padding-left: 1.2rem;
@@ -322,7 +391,8 @@ p {
     margin-bottom: 0.3rem;
 }
 
-/* CTA Section */
+/* ==== CTA Section ==== */
+
 .section-cta {
     padding-block: 3rem;
     background: var(--bg-section);
@@ -344,7 +414,8 @@ p {
     font-weight: 400;
 }
 
-/* Footer */
+/* ==== Footer ==== */
+
 .site-footer {
     background: #05081f;
     border-top: 1px solid var(--border-subtle);
@@ -382,13 +453,17 @@ p {
     padding-inline: 0.35rem;
 }
 
-/* Responsive */
+/* ==== Responsive ==== */
+
+/* מסכים קטנים */
 @media (max-width: 768px) {
+    /* הירו עמודי */
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     
+    /* דשבורד למעלה */
     .hero-visual {
         order: -1;
     }
@@ -397,27 +472,31 @@ p {
         max-width: 100%;
     }
     
+    /* תכונות בעמודה */
     .feature-grid {
         grid-template-columns: 1fr;
     }
     
+    /* CTA ממורכז */
     .cta-inner {
         flex-direction: column;
         text-align: center;
     }
     
+    /* פוטר ממורכז */
     .footer-inner {
         flex-direction: column;
         text-align: center;
     }
-    /* הוספה לתוך ה-media query הקיים */
+    
+    /* כותרת בנייד */
     .header-inner {
         flex-direction: column;
         gap: 1rem;
     }
 
     .main-nav {
-        flex-wrap: wrap; /* מאפשר ללינקים לרדת שורה אם אין מקום */
+        flex-wrap: wrap;
         justify-content: center;
         gap: 0.8rem;
     }

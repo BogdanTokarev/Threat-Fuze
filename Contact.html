@@ -1,40 +1,59 @@
 <!DOCTYPE html>
+<!-- HTML5 doctype -->
 <html lang="en">
+<!-- אלמנט ראשי, שפה אנגלית -->
 <head>
+  <!-- קידוד UTF-8 -->
   <meta charset="UTF-8">
+  <!-- כותרת דף -->
   <title>Threatfuze – FAQ &amp; Contact</title>
+  <!-- viewport רספונסיבי -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- קישור לקובץ CSS -->
   <link rel="stylesheet" href="Contact.css">
 
-  <!-- Google Font -->
+  <!-- Google Font - preconnect מהיר -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- גופן Inter משקלים שונים -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Shared header -->
+  <!-- כותרת ראשית משותפת -->
   <header class="site-header">
+    <!-- מיכל -->
     <div class="container header-inner">
+      <!-- לוגו -->
       <a class="logo" href="Home.css">
+        <!-- אייקון לוגו -->
         <span class="logo-icon">🛡️</span>
+        <!-- טקסט לוגו -->
         Threatfuze
       </a>
 
+      <!-- תפריט ניווט -->
       <nav class="main-nav" aria-label="Main navigation">
+        <!-- קישורים עם aria-label לנגישות -->
         <a href="Home.html">Home</a>
         <a href="Features.html">Features</a>
         <a href="Pricing.html">Pricing</a>
+        <!-- קישור פעיל -->
         <a href="Contact.html" class="nav-link-active">FAQ &amp; Contact</a>
       </nav>
     </div>
   </header>
 
+  <!-- תוכן ראשי -->
   <main>
-    <!-- Hero -->
+    <!-- סקשן הירו -->
     <section class="hero hero--faq">
+      <!-- מיכל -->
       <div class="container hero-content">
+        <!-- טקסט הירו -->
         <div class="hero-text">
+          <!-- כותרת ראשית -->
           <h1>Questions, answers and real support.</h1>
+          <!-- תיאור -->
           <p>
             Find quick answers to the most common questions about Threatfuze, and reach
             out to our team whenever you need help.
@@ -43,21 +62,29 @@
       </div>
     </section>
 
-    <!-- FAQ + Contact layout -->
+    <!-- פריסת FAQ + Contact -->
     <section class="section-faq-Contact">
+      <!-- מיכל -->
       <div class="container layout-two-columns">
-        <!-- FAQ column -->
+        <!-- עמודת FAQ -->
         <section class="faq">
+          <!-- כותרת סקשן -->
           <header class="section-heading">
+            <!-- כותרת משנית -->
             <h2>Frequently asked questions</h2>
+            <!-- תיאור -->
             <p>
               Everything you need to know before starting your first security plan.
             </p>
           </header>
 
+          <!-- רשימת שאלות -->
           <div class="faq-list">
+            <!-- פריט ראשון -->
             <article class="faq-item">
+              <!-- שאלה -->
               <h3>What does Threatfuze actually protect?</h3>
+              <!-- תשובה -->
               <p>
                 Threatfuze focuses on your live environment – it tracks incoming attacks,
                 your current protection status and the actions your team takes in response.
@@ -65,6 +92,7 @@
               </p>
             </article>
 
+            <!-- פריט שני -->
             <article class="faq-item">
               <h3>Do I need security experience to use the dashboard?</h3>
               <p>
@@ -74,6 +102,7 @@
               </p>
             </article>
 
+            <!-- פריט שלישי -->
             <article class="faq-item">
               <h3>How often is the protection status updated?</h3>
               <p>
@@ -83,6 +112,7 @@
               </p>
             </article>
 
+            <!-- פריט רביעי -->
             <article class="faq-item">
               <h3>Can I review past attacks and responses?</h3>
               <p>
@@ -92,6 +122,7 @@
               </p>
             </article>
 
+            <!-- פריט חמישי -->
             <article class="faq-item">
               <h3>What happens after my free trial ends?</h3>
               <p>
@@ -103,8 +134,9 @@
           </div>
         </section>
 
-        <!-- Contact column -->
+        <!-- עמודת יצירת קשר -->
         <section class="Contact">
+          <!-- כותרת -->
           <header class="section-heading">
             <h2>Contact our team</h2>
             <p>
@@ -112,25 +144,33 @@
             </p>
           </header>
 
+          <!-- כרטיס טופס -->
           <div class="Contact-card">
+            <!-- טופס -->
             <form class="Contact-form">
+              <!-- שדה שם -->
               <div class="form-row">
                 <label for="name">Full name</label>
+                <!-- input עם required -->
                 <input type="text" id="name" name="name" placeholder="Jane Doe" required>
               </div>
 
+              <!-- שדה אימייל -->
               <div class="form-row">
                 <label for="email">Work email</label>
                 <input type="email" id="email" name="email" placeholder="you@company.com" required>
               </div>
 
+              <!-- שדה חברה -->
               <div class="form-row">
                 <label for="company">Company</label>
                 <input type="text" id="company" name="company" placeholder="Your company name">
               </div>
 
+              <!-- שדה נושא -->
               <div class="form-row">
                 <label for="topic">Topic</label>
+                <!-- select עם אופציות -->
                 <select id="topic" name="topic">
                   <option>General question</option>
                   <option>Pricing &amp; plans</option>
@@ -139,22 +179,29 @@
                 </select>
               </div>
 
+              <!-- שדה הודעה -->
               <div class="form-row">
                 <label for="message">Message</label>
+                <!-- textarea -->
                 <textarea id="message" name="message" rows="4" placeholder="Tell us what you need help with"></textarea>
               </div>
 
+              <!-- כפתור שליחה -->
               <button type="submit" class="btn btn-primary">Send message</button>
 
+              <!-- רמז -->
               <p class="form-hint">
                 This Contact form is for demo purposes only. No real messages are sent.
               </p>
             </form>
 
+            <!-- פרטי קשר -->
             <div class="Contact-details">
+              <!-- כותרת -->
               <p><strong>Prefer email?</strong></p>
+              <!-- קישור mailto -->
               <p>Reach us at <a href="mailto:support@threatfuze.com">support@threatfuze.com</a></p>
-
+              <!-- הערה -->
               <p class="Contact-note">
                 Our team usually responds within one business day.
               </p>
@@ -165,9 +212,11 @@
     </section>
   </main>
 
-  <!-- Shared footer -->
+  <!-- פוטר משותף -->
   <footer class="site-footer">
+    <!-- מיכל -->
     <div class="container footer-inner">
+      <!-- זכויות יוצרים -->
       <p>&copy; 2025 Threatfuze. All rights reserved.</p>
     </div>
   </footer>

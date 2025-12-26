@@ -1,393 +1,545 @@
-/* ==== Base styles matching the Features page, slightly lighter blue ==== */
+/* ===========================================
+   Contact.css - הסבר מלא שורה אחר שורה
+   =========================================== */
 
-*,
-*::before,
-*::after {
+/* ==== Base styles matching the Features page, slightly lighter blue ==== */
+/* תגובה פנימית למפתחים - מתאימה לעיצוב עמוד Features עם כחול בהיר יותר */
+
+/* כל האלמנטים + pseudo-elements */
+*, *::before, *::after {
+  /* box-sizing: border-box - כולל padding+border ברוחב/גובה האלמנט */
   box-sizing: border-box;
 }
 
+/* :root = מגדיר משתני CSS גלובליים לכל הדף */
 :root {
+  /* צבע רקע ראשי כהה */
   --bg-main: #0a102b;
+  /* רקע סקשנים */
   --bg-section: #111a3d;
+  /* רקע כרטיסים */
   --bg-card: #182552;
+  /* רקע כרטיסים רך */
   --bg-card-soft: #202f6f;
+  /* צבע הדגשה ראשי (כחול) */
   --accent: #5b8dff;
+  /* הדגשה שקופה */
   --accent-soft: rgba(91, 141, 255, 0.18);
+  /* הדגשה חזקה (ורוד) */
   --accent-strong: #ff6b81;
+  /* טקסט ראשי בהיר */
   --text-main: #f4f5ff;
+  /* טקסט משני עמום */
   --text-muted: #b7b9e6;
+  /* מסגרת שקופה */
   --border-subtle: rgba(255, 255, 255, 0.1);
+  /* קיצוב פינות גדול */
   --radius-lg: 18px;
+  /* קיצוב פינות בינוני */
   --radius-md: 12px;
+  /* צל רך */
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
+/* הגדרות בסיסיות לגוף הדף */
 body {
+  /* מבטל מרווחי ברירת מחדל */
   margin: 0;
+  /* גופן ראשי + fallbacks למערכות שונות */
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* רקע גרדיאנט רדיאלי עגול מראש העמוד */
   background: radial-gradient(circle at top, #283d9b 0, #0a102b 55%);
+  /* צבע טקסט ראשי */
   color: var(--text-main);
+  /* גובה שורה לקריאה נוחה */
   line-height: 1.6;
 }
 
+/* כותרות h1,h2,h3 */
 h1, h2, h3 {
+  /* מאפס מרווחים + מוסיף מרווח תחתון קטן */
   margin: 0 0 0.4em;
+  /* גובה שורה צפוף לכותרות */
   line-height: 1.3;
 }
 
-h1 {
-  font-size: 2.2rem;
-}
+/* גדלי כותרות */
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.1rem; }
 
-h2 {
-  font-size: 1.7rem;
-}
-
-h3 {
-  font-size: 1.1rem;
-}
-
+/* פסקאות */
 p {
+  /* מרווח תחתון לפסקאות */
   margin: 0 0 0.7em;
+  /* צבע עמום לפסקאות */
   color: var(--text-muted);
 }
 
+/* קישורים בסיסיים */
 a {
+  /* צבע הדגשה */
   color: var(--accent);
+  /* מבטל קו תחתון */
   text-decoration: none;
 }
 
+/* אפקט hover לקישורים */
 a:hover {
+  /* מוסיף קו תחתון בהעברת עכבר */
   text-decoration: underline;
 }
 
-/* Utility container */
-
+/* מיכל מרכזי */
 .container {
+  /* רוחב מקסימלי 1100px או מלא פחות שוליים */
   width: min(1100px, 100% - 2.5rem);
+  /* ממרכז אופקית */
   margin-inline: auto;
 }
 
 /* ==== Header & navigation ==== */
 
-/* .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(10, 16, 43, 0.96);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-subtle);
-} */
-
+/* כותרת ראשית דביקה */
 .site-header {
+  /* position: sticky - נשאר בתצוגה בגלילה */
   position: sticky;
+  /* נצמד לראש הדף */
   top: 0;
+  /* שכבה גבוהה מעל תוכן */
   z-index: 20;
+  /* רקע שקוף */
   background: rgba(10, 16, 43, 0.96);
+  /* אפקט טשטוש רקע */
   backdrop-filter: blur(14px);
+  /* מסגרת תחתונה */
   border-bottom: 1px solid var(--border-subtle);
 }
 
-/* .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 0.8rem;
-} */
-
+/* תא השכונה הפנימי של הכותרת */
 .header-inner {
+  /* Flexbox */
   display: flex;
+  /* מיישר אנכית */
   align-items: center;
-  /* שינוי: מאפשר שבירת שורות במסכים קטנים */
+  /* מאפשר שבירת שורות במסכים קטנים */
   flex-wrap: wrap; 
-  justify-content: center; /* ממרכז את הלוגו והתפריט */
-  gap: 1rem; /* רווח בין הלוגו לתפריט כשהם אחד מתחת לשני */
+  /* ממרכז אופקית */
+  justify-content: center;
+  /* רווח בין אלמנטים */
+  gap: 1rem;
+  /* padding אנכי */
   padding-block: 0.8rem;
 }
 
-/* .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-main);
-  text-decoration: none;
-  font-size: 1rem;
-} */
-
+/* לוגו */
 .logo {
+  /* Flexbox */
   display: flex;
+  /* מיישר אנכית */
   align-items: center;
+  /* רווח בין אייקון לטקסט */
   gap: 0.5rem;
+  /* משקל גופן כבד */
   font-weight: 700;
+  /* ריווח אותיות */
   letter-spacing: 0.08em;
+  /* אותיות גדולות */
   text-transform: uppercase;
+  /* צבע טקסט */
   color: var(--text-main);
+  /* מבטל קו תחתון */
   text-decoration: none;
+  /* גודל גופן */
   font-size: 1rem;
-  /* שינוי: מוודא שהלוגו לא מתכווץ */
+  /* מונע התכווצות */
   flex-shrink: 0; 
 }
 
+/* אייקון לוגו */
 .logo-icon {
+  /* גודל גופן גדול יותר */
   font-size: 1.3rem;
 }
 
-/* .main-nav {
-  display: flex;
-  gap: 1.2rem;
-  font-size: 0.95rem;
-} */
-
+/* תפריט ניווט ראשי */
 .main-nav {
+  /* Flexbox */
   display: flex;
-  gap: 1rem; /* הקטנו מעט את הרווח לניידים */
+  /* רווח בין קישורים */
+  gap: 1rem;
+  /* גודל גופן */
   font-size: 0.95rem;
-  /* שינוי: חשוב מאוד לניידים קטנים */
+  /* מאפשר שבירה במסכים קטנים */
   flex-wrap: wrap;
+  /* ממרכז */
   justify-content: center;
 }
 
+/* סגנון קישורי ניווט */
 .main-nav a {
+  /* צבע עמום */
   color: var(--text-muted);
+  /* padding */
   padding: 0.35rem 0.6rem;
+  /* פינות מעוגלות */
   border-radius: 999px;
+  /* מעבר חלק */
   transition: color 0.18s ease, background-color 0.18s ease;
 }
 
+/* hover לקישורי ניווט */
 .main-nav a:hover {
+  /* צבע בהיר */
   color: var(--text-main);
+  /* רקע שקוף */
   background-color: rgba(255, 255, 255, 0.06);
 }
 
+/* קישור פעיל */
 .nav-link-active {
+  /* צבע בהיר */
   color: var(--text-main);
+  /* רקע הדגשה */
   background: var(--accent-soft);
 }
 
 /* ==== Buttons ==== */
 
+/* כפתור בסיסי */
 .btn {
+  /* Flexbox */
   display: inline-flex;
+  /* מיישר אנכית ואופקית */
   align-items: center;
   justify-content: center;
+  /* padding */
   padding: 0.65rem 1.4rem;
+  /* פינות מעוגלות */
   border-radius: 999px;
+  /* משקל גופן */
   font-weight: 600;
+  /* גודל גופן */
   font-size: 0.95rem;
+  /* מבטל מסגרת */
   border: none;
+  /* סמן יד */
   cursor: pointer;
+  /* מבטל קו תחתון */
   text-decoration: none;
+  /* מעבר חלק */
   transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
 }
 
+/* כפתור ראשי */
 .btn-primary {
+  /* גרדיאנט רקע */
   background: linear-gradient(135deg, #5b8dff, #7f5af0);
+  /* צבע טקסט לבן */
   color: #fff;
+  /* צל */
   box-shadow: var(--shadow-soft);
 }
 
+/* hover לכפתור ראשי */
 .btn-primary:hover {
+  /* הרמה קלה */
   transform: translateY(-1px);
+  /* צל חזק יותר */
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.65);
 }
 
 /* ==== Hero ==== */
 
+/* סקשן הירו */
 .hero {
+  /* padding אנכי */
   padding-block: 3rem 2.4rem;
 }
 
+/* וריאציה ל-FAQ */
 .hero--faq {
+  /* גרדיאנט שונה */
   background: radial-gradient(circle at top left, #3248c2 0, #0a102b 60%);
 }
 
+/* תוכן הירו */
 .hero-content {
+  /* Flexbox עמודי */
   display: flex;
   flex-direction: column;
+  /* רווח בין אלמנטים */
   gap: 1.3rem;
 }
 
 /* ==== FAQ + Contact layout ==== */
 
+/* סקשן FAQ+Contact */
 .section-faq-Contact {
+  /* padding אנכי */
   padding-block: 2.7rem 3.4rem;
+  /* רקע ראשי */
   background: var(--bg-main);
 }
 
+/* כותרת סקשן */
 .section-heading {
+  /* מרווח תחתון */
   margin-bottom: 1.4rem;
 }
 
+/* פסקה בכותרת סקשן */
 .section-heading p {
+  /* רוחב מקסימלי */
   max-width: 30rem;
 }
 
+/* פריסת שתי עמודות */
 .layout-two-columns {
+  /* Flexbox עמודי */
   display: flex;
   flex-direction: column;
+  /* רווח בין עמודות */
   gap: 2.4rem;
 }
 
-/* FAQ column */
-
+/* רשימת שאלות נפוצות */
 .faq-list {
+  /* Flexbox עמודי */
   display: flex;
   flex-direction: column;
+  /* רווח בין פריטים */
   gap: 1rem;
 }
 
+/* פריט FAQ */
 .faq-item {
+  /* גרדיאנט רקע */
   background: radial-gradient(circle at top left, #24357a 0, #182552 55%);
+  /* פינות מעוגלות */
   border-radius: var(--radius-lg);
+  /* padding */
   padding: 1.1rem 1.2rem;
+  /* מסגרת */
   border: 1px solid var(--border-subtle);
+  /* צל */
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
 }
 
+/* כותרת בפריט FAQ */
 .faq-item h3 {
+  /* מרווח תחתון */
   margin-bottom: 0.35rem;
 }
 
-/* Contact column */
-
+/* כרטיס יצירת קשר */
 .Contact-card {
+  /* גרדיאנט רקע */
   background: radial-gradient(circle at top right, #253a8a 0, #111a3d 55%);
+  /* פינות */
   border-radius: var(--radius-lg);
+  /* padding */
   padding: 1.5rem 1.4rem 1.7rem;
+  /* מסגרת */
   border: 1px solid var(--border-subtle);
+  /* צל */
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
 }
 
+/* טופס יצירת קשר */
 .Contact-form {
+  /* Flexbox עמודי */
   display: flex;
   flex-direction: column;
+  /* רווח בין שדות */
   gap: 0.9rem;
+  /* מרווח תחתון */
   margin-bottom: 1.4rem;
 }
 
+/* שורה בטופס */
 .form-row {
+  /* Flexbox עמודי */
   display: flex;
   flex-direction: column;
+  /* רווח קטן */
   gap: 0.25rem;
 }
 
+/* תוויות */
 label {
+  /* גודל גופן קטן */
   font-size: 0.85rem;
+  /* צבע בהיר */
   color: var(--text-main);
 }
 
-input,
-select,
-textarea {
+/* שדות טופס */
+input, select, textarea {
+  /* פינות מעוגלות */
   border-radius: 10px;
+  /* מסגרת שקופה */
   border: 1px solid rgba(255, 255, 255, 0.16);
+  /* padding */
   padding: 0.55rem 0.7rem;
+  /* רקע שקוף כהה */
   background: rgba(4, 8, 28, 0.7);
+  /* צבע טקסט */
   color: var(--text-main);
+  /* יורש גופן מהורה */
   font: inherit;
 }
 
-input::placeholder,
-textarea::placeholder {
+/* placeholder */
+input::placeholder, textarea::placeholder {
+  /* צבע עמום */
   color: rgba(183, 185, 230, 0.7);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+/* focus על שדות */
+input:focus, select:focus, textarea:focus {
+  /* מבטל outline ברירת מחדל */
   outline: none;
+  /* מסגרת הדגשה */
   border-color: var(--accent);
+  /* צל focus */
   box-shadow: 0 0 0 1px rgba(91, 141, 255, 0.6);
 }
 
+/* textarea */
 textarea {
+  /* מאפשר שינוי גובה בלבד */
   resize: vertical;
 }
 
+/* רמז בטופס */
 .form-hint {
+  /* גופן קטן */
   font-size: 0.78rem;
+  /* צבע עמום */
   color: rgba(183, 185, 230, 0.8);
 }
 
+/* פרטי יצירת קשר */
 .Contact-details p {
+  /* מרווח תחתון */
   margin-bottom: 0.4rem;
 }
 
+/* הערה ביצירת קשר */
 .Contact-note {
+  /* גופן קטן */
   font-size: 0.85rem;
 }
 
 /* ==== Footer ==== */
 
+/* פוטר */
 .site-footer {
+  /* מסגרת עליונה */
   border-top: 1px solid var(--border-subtle);
+  /* רקע כהה */
   background: #05081f;
+  /* padding אנכי */
   padding-block: 1.2rem;
 }
 
+/* תא פוטר פנימי */
 .footer-inner {
+  /* Flexbox עמודי */
   display: flex;
   flex-direction: column;
+  /* רווח קטן */
   gap: 0.3rem;
+  /* מיישר שמאלה */
   align-items: flex-start;
 }
 
+/* קישורי פוטר */
 .footer-links {
+  /* גופן קטן */
   font-size: 0.85rem;
+  /* צבע עמום */
   color: var(--text-muted);
 }
 
+/* קישורים בפוטר */
 .footer-links a {
+  /* צבע הדגשה */
   color: var(--accent);
+  /* מבטל קו תחתון */
   text-decoration: none;
+  /* מעבר חלק */
   transition: color 0.3s ease;
 }
 
+/* hover לקישורי פוטר */
 .footer-links a:hover {
+  /* צבע בהיר */
   color: var(--text-main);
 }
 
+/* מפריד בפוטר */
 .footer-links span {
+  /* padding אופקי */
   padding-inline: 0.35rem;
 }
 
 /* ==== Responsive ==== */
 
+/* מסכים גדולים מ-800px */
 @media (min-width: 800px) {
+  /* תוכן הירו */
   .hero-content {
+    /* רוחב מקסימלי */
     max-width: 640px;
   }
 
+  /* שתי עמודות */
   .layout-two-columns {
+    /* שורה אחת */
     flex-direction: row;
+    /* מיישר למעלה */
     align-items: flex-start;
   }
 
+  /* עמודת FAQ */
   .faq {
+    /* תופס 3/5 רוחב */
     flex: 3;
   }
 
+  /* עמודת Contact */
   .Contact {
+    /* תופס 2/5 רוחב */
     flex: 2;
   }
 
+  /* פוטר */
   .footer-inner {
+    /* שורה אחת */
     flex-direction: row;
+    /* מפזר בין הצדדים */
     justify-content: space-between;
+    /* מיישר אנכית */
     align-items: center;
   }
-  /* עדכון ל-Header במחשב: מחזיר לשורה אחת עם רווח ביניהם */
+
+  /* כותרת במחשב */
   .header-inner {
-    flex-wrap: nowrap; /* מבטל את שבירת השורות */
-    justify-content: space-between; /* לוגו לימין, תפריט לשמאל */
+    /* מבטל שבירה */
+    flex-wrap: nowrap;
+    /* מפזר בין הצדדים */
+    justify-content: space-between;
+    /* מבטל רווח */
     gap: 0;
   }
 
+  /* תפריט במחשב */
   .main-nav {
-    gap: 1.2rem; /* מחזיר את הרווח המקורי */
+    /* רווח מקורי */
+    gap: 1.2rem;
+    /* מיישר ימין */
     justify-content: flex-end;
   }
 }
