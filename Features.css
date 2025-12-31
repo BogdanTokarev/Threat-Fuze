@@ -5,499 +5,567 @@
 /* Base styles - כל האלמנטים */
 *, *::before, *::after {
     /* box-model כולל padding+border */
-    box-sizing: border-box;
+    box-sizing: border-box; /* מחיל border-box על כל האלמנטים + pseudo-elements */
 }
+
 
 /* משתני CSS גלובליים */
 :root {
     /* רקע ראשי */
-    --bg-main: #050922;
+    --bg-main: #050922; /* מגדיר צבע רקע ראשי כהה */
     /* רקע סקשנים */
-    --bg-section: #0b1033;
+    --bg-section: #0b1033; /* צבע רקע לסקשנים */
     /* רקע כרטיסים */
-    --bg-card: #111643;
+    --bg-card: #111643; /* צבע רקע לכרטיסים */
     /* צבע הדגשה */
-    --accent: #5c7cfa;
+    --accent: #5c7cfa; /* צבע כחול ראשי להדגשות */
     /* הדגשה שקופה */
-    --accent-soft: rgba(92, 124, 250, 0.18);
+    --accent-soft: rgba(92, 124, 250, 0.18); /* גרסה שקופה של צבע ההדגשה */
     /* גרדיאנט הדגשה */
-    --accent-gradient: linear-gradient(135deg, #5c7cfa, #7f5af0);
+    --accent-gradient: linear-gradient(135deg, #5c7cfa, #7f5af0); /* גרדיאנט מכחול לסגול */
     /* טקסט ראשי */
-    --text-main: #f4f5ff;
+    --text-main: #f4f5ff; /* צבע טקסט ראשי (בהיר) */
     /* טקסט משני */
-    --text-muted: #b7b9e6;
+    --text-muted: #b7b9e6; /* צבע טקסט משני (עמום) */
     /* מסגרת */
-    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-subtle: rgba(255, 255, 255, 0.08); /* מסגרת שקופה עדינה */
     /* פינות */
-    --radius-lg: 18px;
+    --radius-lg: 18px; /* רדיוס פינות גדול */
     /* צל */
-    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45); /* צל רך גדול */
 }
+
 
 /* גוף הדף */
 body {
     /* מבטל מרווחים */
-    margin: 0;
+    margin: 0; /* מסיר margin ברירת המחדל של הדפדפן */
     /* גופנים */
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif; /* גופן Inter + fallbacks */
     /* גרדיאנט רקע */
-    background: radial-gradient(circle at top, #1c2470, #050922 55%);
+    background: radial-gradient(circle at top, #1c2470, #050922 55%); /* רקע גרדיאנט רדיאלי */
     /* צבע טקסט */
-    color: var(--text-main);
+    color: var(--text-main); /* צבע טקסט ראשי מכל המשתנים */
     /* גובה שורה */
-    line-height: 1.6;
+    line-height: 1.6; /* גובה שורה לקריאה נוחה */
 }
+
 
 /* כותרות */
 h1, h2, h3 {
     /* מרווחים */
-    margin: 0 0 0.8rem;
+    margin: 0 0 0.8rem; /* מאפס margin + מוסיף מרווח תחתון */
     /* גובה שורה */
-    line-height: 1.3;
+    line-height: 1.3; /* line-height צפוף לכותרות */
     /* משקל */
-    font-weight: 700;
+    font-weight: 700; /* משקל גופן כבד */
 }
 
+
 /* גדלי כותרות */
-h1 { font-size: 2.4rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.3rem; }
+h1 { font-size: 2.4rem; } /* h1 = 2.4rem (גדול מאוד) */
+h2 { font-size: 2rem; } /* h2 = 2rem (גדול) */
+h3 { font-size: 1.3rem; } /* h3 = 1.3rem (בינוני) */
+
 
 /* פסקאות */
 p {
     /* מרווחים */
-    margin: 0 0 0.75em;
+    margin: 0 0 0.75em; /* מרווח תחתון לפסקאות */
     /* צבע */
-    color: var(--text-muted);
+    color: var(--text-muted); /* צבע עמום לפסקאות */
 }
+
 
 /* מיכל */
 .container {
     /* רוחב רספונסיבי */
-    width: min(1100px, 100% - 2.5rem);
+    width: min(1100px, 100% - 2.5rem); /* מקסימום 1100px או מלא פחות שוליים */
     /* ממרכז */
-    margin-inline: auto;
+    margin-inline: auto; /* margin שמאל+ימין = auto (מרכז) */
 }
 
+
 /* ==== Header ==== */
+
 
 /* כותרת דביקה */
 .site-header {
     /* sticky */
-    position: sticky;
-    top: 0;
+    position: sticky; /* נשאר בתצוגה בגלילה */
+    top: 0; /* נצמד לראש הדף */
     /* שכבה גבוהה */
-    z-index: 100;
+    z-index: 100; /* שכבה גבוהה מעל הכל */
     /* רקע שקוף */
-    background: rgba(5, 9, 34, 0.96);
+    background: rgba(5, 9, 34, 0.96); /* רקע שקוף כהה */
     /* טשטוש */
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px); /* אפקט טשטוש רקע */
     /* מסגרת */
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle); /* קו תחתון עדין */
 }
+
 
 /* תא כותרת */
 .header-inner {
     /* Flexbox */
-    display: flex;
+    display: flex; /* מפעיל Flexbox */
     /* מיישר */
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* מיישר אנכית למרכז */
+    justify-content: space-between; /* לוגו שמאל, תפריט ימין */
     /* padding */
-    padding-block: 0.8rem;
+    padding-block: 0.8rem; /* padding למעלה ולמטה */
 }
+
 
 /* לוגו */
 .logo {
     /* Flexbox */
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-main);
-    text-decoration: none;
+    display: flex; /* Flexbox */
+    align-items: center; /* מיישר אנכית */
+    gap: 0.5rem; /* רווח בין אייקון לטקסט */
+    font-size: 1rem; /* גודל גופן */
+    font-weight: 700; /* משקל כבד */
+    letter-spacing: 0.08em; /* ריווח בין אותיות */
+    text-transform: uppercase; /* אותיות גדולות */
+    color: var(--text-main); /* צבע טקסט */
+    text-decoration: none; /* מבטל קו תחתון */
 }
+
 
 /* אייקון */
 .logo-icon {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* גופן גדול יותר לאייקון */
 }
+
 
 /* תפריט */
 .main-nav {
-    display: flex;
-    gap: 1.2rem;
-    font-size: 0.95rem;
+    display: flex; /* Flexbox */
+    gap: 1.2rem; /* רווח בין קישורים */
+    font-size: 0.95rem; /* גודל גופן */
 }
+
 
 /* קישורי תפריט */
 .main-nav a {
-    color: var(--text-muted);
-    text-decoration: none;
-    padding: 0.35rem 0.6rem;
-    border-radius: 999px;
-    font-weight: 500;
-    transition: all 0.18s ease;
+    color: var(--text-muted); /* צבע עמום */
+    text-decoration: none; /* מבטל קו תחתון */
+    padding: 0.35rem 0.6rem; /* padding סביב טקסט */
+    border-radius: 999px; /* פינות מעוגלות (כדור) */
+    font-weight: 500; /* משקל בינוני */
+    transition: all 0.18s ease; /* מעבר חלק לכל השינויים */
 }
+
 
 /* hover + active */
 .main-nav a:hover, .nav-link-active {
-    color: var(--text-main);
-    background: var(--accent-soft);
+    color: var(--text-main); /* צבע בהיר בהדגשה */
+    background: var(--accent-soft); /* רקע הדגשה שקוף */
 }
+
 
 /* ==== Buttons ==== */
 
+
 /* כפתור בסיסי */
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.65rem 1.4rem;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.16s ease;
+    display: inline-flex; /* Flexbox inline */
+    align-items: center; /* מיישר אנכית */
+    justify-content: center; /* מיישר אופקית */
+    padding: 0.65rem 1.4rem; /* padding */
+    border-radius: 999px; /* פינות מעוגלות */
+    font-weight: 600; /* משקל כבד */
+    font-size: 0.95rem; /* גודל */
+    border: none; /* מבטל מסגרת */
+    cursor: pointer; /* סמן יד */
+    text-decoration: none; /* מבטל קו תחתון */
+    transition: all 0.16s ease; /* מעבר חלק */
 }
+
 
 /* כפתור ראשי */
 .btn-primary {
-    background: var(--accent-gradient);
-    color: #fff;
-    box-shadow: var(--shadow-soft);
+    background: var(--accent-gradient); /* גרדיאנט צבעוני */
+    color: #fff; /* טקסט לבן */
+    box-shadow: var(--shadow-soft); /* צל רך */
 }
+
 
 /* hover ראשי */
 .btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.65);
+    transform: translateY(-1px); /* זז למעלה */
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.65); /* צל חזק יותר */
 }
+
 
 /* כפתור משני */
 .btn-secondary {
-    background: transparent;
-    color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent; /* רקע שקוף */
+    color: var(--text-main); /* טקסט בהיר */
+    border: 1px solid rgba(255, 255, 255, 0.25); /* מסגרת שקופה */
 }
+
 
 /* hover משני */
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.06); /* רקע שקוף בהיר */
 }
+
 
 /* ==== Hero Section ==== */
 
+
 .hero {
-    padding-block: 3.2rem 2.8rem;
+    padding-block: 3.2rem 2.8rem; /* padding למעלה 3.2rem, למטה 2.8rem */
 }
 
+
 .hero--Features {
-    background: radial-gradient(circle at top left, #202876, #050922 55%);
+    background: radial-gradient(circle at top left, #202876, #050922 55%); /* גרדיאנט רקע לווריאציה */
 }
+
 
 /* פריסת הירו - שתי עמודות */
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    display: grid; /* מפעיל CSS Grid */
+    grid-template-columns: 1fr 1fr; /* שתי עמודות שוות */
+    gap: 4rem; /* רווח בין עמודות */
+    align-items: center; /* מיישר אנכית למרכז */
 }
+
 
 /* טקסט הירו */
 .hero-text {
-    max-width: 36rem;
+    max-width: 36rem; /* רוחב מקסימלי לטקסט */
 }
+
 
 .hero-text h1 {
-    font-weight: 700;
+    font-weight: 700; /* משקל כבד לכותרת */
 }
 
+
 .hero-text p {
-    font-weight: 400;
+    font-weight: 400; /* משקל רגיל לפסקאות */
 }
+
 
 /* תצוגת דשבורד */
 .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Flexbox */
+    justify-content: center; /* ממרכז אופקית */
+    align-items: center; /* ממרכז אנכית */
 }
 
+
 .hero-dashboard-preview {
-    width: 100%;
-    max-width: 450px;
-    padding: 2.5rem 2rem;
-    border-radius: 24px;
-    border: 1px solid var(--border-subtle);
-    background: linear-gradient(145deg, #1a214f, #111643);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    width: 100%; /* רוחב מלא */
+    max-width: 450px; /* מקסימום 450px */
+    padding: 2.5rem 2rem; /* padding */
+    border-radius: 24px; /* פינות מעוגלות */
+    border: 1px solid var(--border-subtle); /* מסגרת */
+    background: linear-gradient(145deg, #1a214f, #111643); /* גרדיאנט רקע */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); /* צל גדול */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* עמודות */
+    gap: 1rem; /* רווח בין צ'יפים */
 }
+
 
 /* צ'יפים */
 .hero-chip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 1.5rem;
-    border-radius: 16px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-main);
-    background: rgba(5, 9, 34, 0.8);
-    transition: transform 0.2s ease;
+    display: flex; /* Flexbox */
+    align-items: center; /* מיישר אנכית */
+    justify-content: center; /* מיישר אופקית */
+    padding: 1rem 1.5rem; /* padding */
+    border-radius: 16px; /* פינות */
+    font-size: 1.1rem; /* גופן */
+    font-weight: 700; /* משקל כבד */
+    color: var(--text-main); /* צבע */
+    background: rgba(5, 9, 34, 0.8); /* רקע כהה שקוף */
+    transition: transform 0.2s ease; /* אנימציה */
 }
+
 
 .hero-chip:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* קופץ למעלה בהדגשה */
 }
+
 
 .hero-chip--safe {
-    border: 2px solid #4ad66d;
-    background: rgba(74, 214, 109, 0.15);
+    border: 2px solid #4ad66d; /* מסגרת ירוקה */
+    background: rgba(74, 214, 109, 0.15); /* רקע ירוק שקוף */
 }
+
 
 .hero-chip--alert {
-    border: 2px solid #ff6b6b;
-    background: rgba(255, 107, 107, 0.15);
+    border: 2px solid #ff6b6b; /* מסגרת אדומה */
+    background: rgba(255, 107, 107, 0.15); /* רקע אדום שקוף */
 }
 
+
 .hero-chip--tip {
-    border: 2px solid #f5a623;
-    background: rgba(245, 166, 35, 0.15);
+    border: 2px solid #f5a623; /* מסגרת צהובה */
+    background: rgba(245, 166, 35, 0.15); /* רקע צהוב שקוף */
 }
+
 
 /* ==== Features Section ==== */
 
+
 .section-Features {
-    padding-block: 3rem 4rem;
-    background: var(--bg-main);
+    padding-block: 3rem 4rem; /* padding אנכי */
+    background: var(--bg-main); /* רקע ראשי */
 }
+
 
 /* כותרת סקשן */
 .section-heading {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 3rem;
+    text-align: center; /* ממרכז טקסט */
+    max-width: 600px; /* רוחב מקסימלי */
+    margin: 0 auto 3rem; /* ממרכז + מרווח תחתון */
 }
+
 
 .section-heading h2 {
-    font-weight: 700;
+    font-weight: 700; /* משקל כבד */
 }
 
+
 .section-heading p {
-    font-weight: 400;
+    font-weight: 400; /* משקל רגיל */
 }
+
 
 /* רשת תכונות */
 .feature-grid {
-    display: grid;
+    display: grid; /* CSS Grid */
     /* רספונסיבי אוטומטי */
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* עמודות אוטומטיות, מינימום 260px */
+    gap: 1.6rem; /* רווח בין כרטיסים */
 }
+
 
 /* כרטיס תכונה */
 .feature-card {
-    background: radial-gradient(circle at top left, #1a214f, #111643 55%);
-    border-radius: var(--radius-lg);
-    padding: 1.4rem 1.3rem;
-    border: 1px solid var(--border-subtle);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    position: relative;
-    overflow: hidden;
+    background: radial-gradient(circle at top left, #1a214f, #111643 55%); /* גרדיאנט רקע */
+    border-radius: var(--radius-lg); /* פינות מעוגלות */
+    padding: 1.4rem 1.3rem; /* padding */
+    border: 1px solid var(--border-subtle); /* מסגרת */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); /* צל */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* עמודות */
+    gap: 0.6rem; /* רווחים פנימיים */
+    position: relative; /* ל-pseudo element */
+    overflow: hidden; /* חותך תוכן בולט */
 }
+
 
 /* אפקט hover */
 .feature-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top right, rgba(92, 124, 250, 0.12), transparent 55%);
-    opacity: 0;
-    transition: opacity 0.2s ease;
+    content: ''; /* יוצר אלמנט ריק */
+    position: absolute; /* מיקום מוחלט */
+    inset: 0; /* מכסה את כל הכרטיס */
+    background: radial-gradient(circle at top right, rgba(92, 124, 250, 0.12), transparent 55%); /* גרדיאנט */
+    opacity: 0; /* שקוף בהתחלה */
+    transition: opacity 0.2s ease; /* אנימציה */
 }
 
+
 .feature-card:hover::before {
-    opacity: 1;
+    opacity: 1; /* מופיע בהדגשה */
 }
+
 
 /* אייקון תכונה */
 .feature-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 12px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-    background: var(--accent-soft);
-    color: #fff;
+    width: 36px; /* רוחב קבוע */
+    height: 36px; /* גובה קבוע */
+    border-radius: 12px; /* פינות */
+    display: inline-flex; /* Flexbox */
+    align-items: center; /* מרכז אנכי */
+    justify-content: center; /* מרכז אופקי */
+    font-size: 1.2rem; /* גופן */
+    margin-bottom: 0.3rem; /* מרווח תחתון */
+    background: var(--accent-soft); /* רקע */
+    color: #fff; /* צבע */
 }
+
 
 /* אייקונים ספציפיים */
 .feature-icon--status {
-    background: linear-gradient(135deg, #4ad66d, #34c759);
+    background: linear-gradient(135deg, #4ad66d, #34c759); /* ירוק */
 }
+
 
 .feature-icon--threats {
-    background: linear-gradient(135deg, #ff6b6b, #ff5252);
+    background: linear-gradient(135deg, #ff6b6b, #ff5252); /* אדום */
 }
+
 
 .feature-icon--log {
-    background: linear-gradient(135deg, #5c7cfa, #7f5af0);
+    background: linear-gradient(135deg, #5c7cfa, #7f5af0); /* כחול-סגול */
 }
+
 
 .feature-icon--tips {
-    background: linear-gradient(135deg, #f5a623, #ffb300);
+    background: linear-gradient(135deg, #f5a623, #ffb300); /* צהוב */
 }
+
 
 .feature-card h3 {
-    font-weight: 700;
+    font-weight: 700; /* משקל כבד */
 }
+
 
 .feature-tagline {
-    font-weight: 600;
-    color: var(--text-main);
-    font-size: 0.95rem;
+    font-weight: 600; /* משקל בינוני-כבד */
+    color: var(--text-main); /* צבע בהיר */
+    font-size: 0.95rem; /* גופן קצת קטן */
 }
 
+
 .feature-card p {
-    font-weight: 400;
+    font-weight: 400; /* משקל רגיל */
 }
+
 
 /* רשימת תכונות */
 .feature-list {
-    margin: 0.5rem 0 0;
-    padding-left: 1.2rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 400;
+    margin: 0.5rem 0 0; /* מרווח עליון */
+    padding-left: 1.2rem; /* מטבל לרשימה */
+    color: var(--text-muted); /* צבע עמום */
+    font-size: 0.9rem; /* גופן קטן */
+    font-weight: 400; /* משקל רגיל */
 }
 
+
 .feature-list li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.3rem; /* מרווח בין פריטים */
 }
+
 
 /* ==== CTA Section ==== */
 
+
 .section-cta {
-    padding-block: 3rem;
-    background: var(--bg-section);
+    padding-block: 3rem; /* padding אנכי */
+    background: var(--bg-section); /* רקע סקשן */
 }
+
 
 .cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox */
+    align-items: center; /* מיישר אנכית */
+    justify-content: space-between; /* מפזר */
+    gap: 2rem; /* רווח */
+    flex-wrap: wrap; /* נשבר במסכים קטנים */
 }
+
 
 .cta-inner h2 {
-    font-weight: 700;
+    font-weight: 700; /* משקל כבד */
 }
 
+
 .cta-inner p {
-    font-weight: 400;
+    font-weight: 400; /* משקל רגיל */
 }
+
 
 /* ==== Footer ==== */
 
+
 .site-footer {
-    background: #05081f;
-    border-top: 1px solid var(--border-subtle);
-    padding-block: 1.2rem;
+    background: #05081f; /* רקע כהה */
+    border-top: 1px solid var(--border-subtle); /* קו עליון */
+    padding-block: 1.2rem; /* padding אנכי */
 }
+
 
 .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* מפזר */
+    align-items: center; /* מיישר אנכית */
+    flex-wrap: wrap; /* נשבר */
+    gap: 0.5rem; /* רווח */
 }
+
 
 .footer-inner p {
-    font-weight: 400;
+    font-weight: 400; /* משקל רגיל */
 }
+
 
 .footer-links {
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    font-size: 0.85rem; /* גופן קטן */
+    color: var(--text-muted); /* צבע עמום */
 }
+
 
 .footer-links a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--accent); /* צבע הדגשה */
+    text-decoration: none; /* מבטל קו תחתון */
+    transition: color 0.3s ease; /* מעבר צבע */
 }
+
 
 .footer-links a:hover {
-    color: var(--text-main);
+    color: var(--text-main); /* צבע בהיר בהדגשה */
 }
+
 
 .footer-links span {
-    padding-inline: 0.35rem;
+    padding-inline: 0.35rem; /* padding שמאל+ימין למפריד */
 }
 
+
 /* ==== Responsive ==== */
+
 
 /* מסכים קטנים */
 @media (max-width: 768px) {
     /* הירו עמודי */
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: 1fr; /* עמודה אחת */
+        gap: 2rem; /* רווח קטן יותר */
     }
     
     /* דשבורד למעלה */
     .hero-visual {
-        order: -1;
+        order: -1; /* שם את הדשבורד ראשון בנייד */
     }
     
     .hero-dashboard-preview {
-        max-width: 100%;
+        max-width: 100%; /* מלא ברוחב */
     }
     
     /* תכונות בעמודה */
     .feature-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* עמודה אחת */
     }
     
     /* CTA ממורכז */
     .cta-inner {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* עמודות */
+        text-align: center; /* ממרכז */
     }
     
     /* פוטר ממורכז */
     .footer-inner {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* עמודות */
+        text-align: center; /* ממרכז */
     }
     
     /* כותרת בנייד */
     .header-inner {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column; /* לוגו מעל תפריט */
+        gap: 1rem; /* רווח */
     }
 
     .main-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.8rem;
+        flex-wrap: wrap; /* מאפשר שבירה */
+        justify-content: center; /* ממרכז */
+        gap: 0.8rem; /* רווח קטן */
     }
 }
