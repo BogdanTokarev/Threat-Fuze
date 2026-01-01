@@ -278,7 +278,7 @@ p {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    /*  */
+    /* להוריד אלמנת לשורה חדשה אם אין מקום. */
 }
 
 /* Dashboard Mockup */
@@ -288,11 +288,15 @@ p {
 
 .dashboard-mockup {
     perspective: 1000px; 
-    /*  */
+    /* כמה האובייקט ייראה רחוק מהעין. */
 }
 
 .mockup-screen {
     background: linear-gradient(145deg, #1a214f, #111643);
+    /* linear-gradient:
+    145deg: הזווית. הצביעה לא הולכת מלמעלה למטה, אלא באלכסון (145 מעלות).
+    #1a214f: צבע ההתחלה (כחול כהה בהיר יחסית).
+    #111643: צבע הסיום (כחול כהה עמוק יותר). */
     border-radius: var(--radius-lg);
     padding: 2rem;
     box-shadow: var(--shadow-soft);
@@ -316,6 +320,9 @@ p {
 }
 
 .status-bar.safe {
+/* מודולריות
+    כמו יורשה, בדוגמא שלנו
+    .status-bar.safe יורש .status-bar */
     background: rgba(74, 214, 109, 0.2);
     color: var(--success);
 }
@@ -371,6 +378,13 @@ p {
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* 
+    reteat - תחזור על הפעולה עבור כל העמודות.
+    auto-fit - מגדיר את כמות העמודות ביחס לרוחב המסך וכרטיסיות. (לפי המינימום - 260)
+    minmax - המינימום ומקסימום של הכרטיס.
+        min - 260px
+        max - 1fr - ייחס 1 ל-1 עבור כל הכרטיסיות, אם נכנסו יותר מאחד.
+        כלומר ההגדרה אומרת למתוח את הכרטיסייה כדי למלאה את השורה. */
     gap: 1.6rem;
 }
 
@@ -383,28 +397,30 @@ p {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    /* מסתיר את כל מה שחורג מגבולות האובייקט. */
 }
 
-.benefit-card::before {
+/* .benefit-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+         מרחק של האובייקט מהגבולות של האבא שלו. 
     height: 4px;
     background: var(--accent-gradient);
     transform: scaleX(0);
     transition: transform 0.3s ease;
-}
+} */ 
 
-.benefit-card:hover {
+/* .benefit-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-glow);
-}
+} */
 
-.benefit-card:hover::before {
+/* .benefit-card:hover::before {
     transform: scaleX(1);
-}
+} */
 
 .benefit-icon {
     font-size: 2.5rem;
@@ -413,6 +429,7 @@ p {
 }
 
 /* CTA Section */
+/* CTA - Call to Action */
 .section-cta {
     padding-block: 3rem;
     background: var(--bg-main);
@@ -441,12 +458,13 @@ p {
     gap: 0.5rem;
 }
 
-.footer-links {
+/* .footer-links {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
 
 .footer-links a {
+/* מדברים ספיציפית על הקישורים <a> 
     color: var(--accent);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -458,10 +476,11 @@ p {
 
 .footer-links span {
     padding-inline: 0.35rem;
-}
+} */
 
 /* Responsive */
 @media (max-width: 768px) {
+/* תתייחס להגדרות הזאות רק בתנאי שרוחב המסך הוא 768 או פחות. */
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -479,6 +498,7 @@ p {
     
     .cta-inner {
         flex-direction: column;
+        /* מסדרת את האיברים בעמודה ולא שורה. */
         text-align: center;
     }
     
@@ -486,14 +506,14 @@ p {
         flex-direction: column;
         text-align: center;
     }
-    /* הוספה לתוך ה-media query הקיים */
+    
     .header-inner {
         flex-direction: column;
         gap: 1rem;
     }
 
     .main-nav {
-        flex-wrap: wrap; /* מאפשר ללינקים לרדת שורה אם אין מקום */
+        flex-wrap: wrap;
         justify-content: center;
         gap: 0.8rem;
     }
